@@ -68,6 +68,10 @@ sam_filter work/$BASE.qtrimmed.sorted.bam "-q 30"
 #macs2 -t work/$BASE.filtered.bam -g 1e9 --name=work/IRF1 --format=BAM --tsize=36 --mfold=10,30
 macs2 -t work/$BASE.filtered.bam -g hs --name=work/IRF1.2 --format=BAM --tsize=36 --mfold=10,30 |& ts | tee work/$BASE.IRF1.2.log
 macs2 -t work/$BASE.qtrimmed.sorted.filtered.bam -g hs --name=work/IRF1.3 --format=BAM --tsize=36 --mfold=10,30 |& ts | tee work/$BASE.IRF1.3.log
+mv work/IRF1.3_treat_pvalue.{bdg,bedgraph}
+igvtools toTDF ./work/IRF1.3_treat_pvalue.{bedgraph,tdf} hg19
+mv work/IRF1.3_treat_qvalue.{bdg,bedgraph}
+igvtools toTDF ./work/IRF1.3_treat_qvalue.{bedgraph,tdf} hg19
 
 
 
