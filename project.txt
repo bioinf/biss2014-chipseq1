@@ -1,0 +1,1 @@
+chipseq1@summer-school:~/Ruslan/data/chromFa$ bwa mem new.fasta -t8 > newaligment.sam
