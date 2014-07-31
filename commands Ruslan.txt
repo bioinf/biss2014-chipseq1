@@ -1,0 +1,25 @@
+отчет2  Д.Руслан
+
+1) github:
+
+- git clone "https://github.com/bioinf/biss2014-chipseq1.git"
+- git commit -a -m "text"
+- git add .
+- git pull
+- git push
+
+2) сервер:
+
+- tmux
+- tmux attach
+- top
+- FileZilla program
+
+3) сервер (запуск программ):
+
+- fastq_quality_trimmer -i RawDataFile.fastq -o sborka.fastq -t 28 -Q 33
+- fastqc sborka.fastq
+- cat *.fa > NewComb.fasta
+- bwa index -a bwtsw NewComb.fasta
+- bwa mem -t 4 NewComb.fasta sborka.fastq > alighment.sam
+
